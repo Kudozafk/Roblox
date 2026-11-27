@@ -2,7 +2,7 @@
 
 | Game | Asset | CURRENT | Approved | Path |
 |---|---|---|---|---|
-| Green Desert | WaterSystem | WaterSystem_V6 | 2026-11-27 | Roblox Projects/Green Desert/Scripts/WaterSystem/CURRENT/ |
+| Green Desert | WaterSystem | WaterSystem_V7 | 2026-11-27 | Roblox Projects/Green Desert/Scripts/WaterSystem/CURRENT/ |
 | Green Desert | PondWaterSource | PondWaterSource_V1 | 2026-11-26 | Roblox Projects/Green Desert/Maps/PondWaterSource/CURRENT/ |
 | Green Desert | ItemsConfig | ItemsConfig_V1 | 2026-11-26 | Roblox Projects/Green Desert/Scripts/ItemsConfig/CURRENT/ |
 | Green Desert | FirstPerson | FirstPerson_V2 | 2026-11-27 | Roblox Projects/Green Desert/Scripts/FirstPerson/CURRENT/ |
@@ -11,5 +11,6 @@
 | Green Desert | AreaLandmarks | AreaLandmarks_V1 | 2026-11-27 | Roblox Projects/Green Desert/Maps/AreaLandmarks/CURRENT/ |
 | Green Desert | MapPolish | MapPolish_V1 | 2026-11-27 | Roblox Projects/Green Desert/Maps/MapPolish/CURRENT/ |
 | Green Desert | WaterToolsPanels | WaterToolsPanels_V1 (superseded by GameUI_V1) | 2026-11-27 | Roblox Projects/Green Desert/Scripts/WaterToolsPanels/CURRENT/ |
-| Green Desert | GameUI | GameUI_V1 | 2026-11-27 | Roblox Projects/Green Desert/Scripts/GameUI/CURRENT/ |
+| Green Desert | GameUI | GameUI_V2 | 2026-11-27 | Roblox Projects/Green Desert/Scripts/GameUI/CURRENT/ |
 | Green Desert | RefillIndicator | RefillIndicator_V1 | 2026-11-27 | Roblox Projects/Green Desert/Scripts/RefillIndicator/CURRENT/ |
+| Green Desert | WorldAtmosphere | WorldAtmosphere_V1 | 2026-11-27 | Roblox Projects/Green Desert/Scripts/WorldAtmosphere/CURRENT/ |

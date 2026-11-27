@@ -1,6 +1,12 @@
 # WaterSystem — Version History
 
-## WaterSystem_V6 — 2026-11-27 (CURRENT)
+## WaterSystem_V7 — 2026-11-27 (CURRENT)
+- Phase 7 (tools and growth): every tool has its own sound, water stream, splash and use animation; new patterns for the bucket (splash), sprayer (mist) and tank (wide); balance retuned so area per second rises with price; the green ripples outward from where water lands; grass, flowers and saplings pop up; plants sparkle on a stage; a soft chime on the player's own restoring.
+- Changed: Config, Use, Restore, WaterClient. New: ToolEffects, GrowthJuice. Unchanged: the other 12 scripts.
+- Approved: "approve". Playtests: all 7 tools fired on fresh sand: water spent matched (1, 1, 3, 1, 1, 2, 12), every one earned coins, droplets in flight (10 to 28); pouring tools tip forward (measured); 12 of 12 fresh cells grew from small to full, appearing 0.16 to 0.21 s after the shot; no part left shrunk; no measurable frame cost; console clean. All 18 scripts match Studio byte for byte.
+- Previous version preserved in `ARCHIVE/WaterSystem_V6/`.
+
+## WaterSystem_V6 — 2026-11-27 (archived)
 - Phase 6 (water side): every tool aims at the cursor within its own range (`ToolStats.clampAim`, shared by server and screen); an aim ring shows where the water lands (visible above tall grass); "+N" coin pops where the player's own water restored ground (Effect now sends the pourer's UserId); Reduced effects setting; notices moved to GameUI.
 - Changed: Config (ranges), ToolStats (clampAim), Use (aim-clamped targets for every pattern, terrain drop), WaterClient (aim ring, touch aim, coin pops, reduced effects, notice box removed). Unchanged: the other 12 scripts.
 - Approved: "approved". Playtests: ring at the clamped 10 studs for the can, on grass and on sand; real held clicks used water; pours on sand paid coins (440 -> 444, 444 -> 461) with 8 coin pops seen; empty tool showed the warning and refill marker; console clean. All 16 scripts match Studio byte for byte.

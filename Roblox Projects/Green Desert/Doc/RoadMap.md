@@ -168,27 +168,27 @@ Phase 7 – World Atmosphere \& Polish
 
 IMMERSION
 
-\- \[ ] Day and night cycle.
+\- \[x] Day and night cycle.
 
-\- \[ ] Realistic lighting.
+\- \[x] Realistic lighting.
 
-\- \[ ] Weather effects.
+\- \[x] Weather effects.
 
-\- \[ ] Ambient environmental sounds.
+\- \[x] Ambient environmental sounds.
 
-\- \[ ] Water spraying sounds.
+\- \[x] Water spraying sounds.
 
-\- \[ ] Water source sounds.
+\- \[x] Water source sounds.
 
-\- \[ ] Plant growth animations.
+\- \[x] Plant growth animations.
 
-\- \[ ] Environmental particles.
+\- \[x] Environmental particles.
 
-\- \[ ] Water splash effects.
+\- \[x] Water splash effects.
 
-\- \[ ] Smooth environmental transitions.
+\- \[x] Smooth environmental transitions.
 
-\- \[ ] Performance optimization.
+\- \[x] Performance optimization.
 
 Phase 8 – Saving \& Multiplayer
 
