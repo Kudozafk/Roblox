@@ -1,6 +1,13 @@
 # WaterSystem — Version History
 
-## WaterSystem_V4 — 2026-11-27 (CURRENT)
+## WaterSystem_V5 — 2026-11-27 (CURRENT)
+- Phase 4: six new water tools bought with coins (Watering Can, Water Bucket brought back, Water Sprayer, Large Water Tank, High-Pressure Blaster, Wide-Area Sprinkler), stud-style part models, five spray patterns (drop, fan, spray, jet, sprinkler), different capacities.
+- Coins: 1 per restored cell. Shop (buy / equip) and per-tool upgrades (Capacity, Power, Speed, levels 0-5); bought tools and upgrades kept through death.
+- New scripts: ToolStats, ToolModels, Shop. Changed: Config, Run, Tools, Use, Restore, WaterClient. Unchanged: AreaMap, Growth, Areas, Springs, Sources, Tagging, RestorationLook. Removed: the old WateringUpgrade script.
+- Approved: "approve". Playtests: real R key + click bought the can (held correctly); all 6 tools bought (coins down by exactly the prices); every pattern restored ground with coins equal to cells; real T key + clicks upgraded Capacity 30 -> 38 and Speed; all 7 tools survived death with water and upgrades; junk and unaffordable requests rejected; sprinkler lands on the ground; console clean. All 16 scripts match Studio byte for byte.
+- Previous version preserved in `ARCHIVE/WaterSystem_V4/`.
+
+## WaterSystem_V4 — 2026-11-27 (archived)
 - Phase 3 (without unlockable regions): five named explorable areas (Pond Basin, Lavender Dunes, Birch Hollow, Pine Ridge, Sunflower Meadow) plus the Open Desert, each restoring in its own style (ground material, grass, flowers, trees, decoration; sunflowers are new).
 - Area restoration goals (Pond Basin 4%, others 2%, TBD) and completion rewards (+2 water capacity on every water tool for good, server-wide, kept through respawn).
 - Hidden springs: one per area, found by walking within 14 studs; then they show, become solid and work as refill points.

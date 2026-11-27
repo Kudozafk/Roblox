@@ -78,29 +78,29 @@ Phase 4 – Water Tools \& Upgrades
 
 GAMEPLAY EXPANSION
 
-\- \[ ] Basic watering can.
+\- \[x] Basic watering can.
 
-\- \[ ] Water bottle.
+\- \[x] Water bottle.
 
-\- \[ ] Water bucket.
+\- \[x] Water bucket.
 
-\- \[ ] Water sprayer.
+\- \[x] Water sprayer.
 
-\- \[ ] High-pressure water blaster.
+\- \[x] High-pressure water blaster.
 
-\- \[ ] Large-capacity water tank.
+\- \[x] Large-capacity water tank.
 
-\- \[ ] Wide-area sprinkler.
+\- \[x] Wide-area sprinkler.
 
-\- \[ ] Different spray patterns.
+\- \[x] Different spray patterns.
 
-\- \[ ] Different water capacities.
+\- \[x] Different water capacities.
 
-\- \[ ] Tool upgrade system.
+\- \[x] Tool upgrade system.
 
-\- \[ ] Tool selection interface.
+\- \[x] Tool selection interface.
 
-\- \[ ] Tool inventory interface.
+\- \[x] Tool inventory interface.
 
 Phase 5 – Monetization
 

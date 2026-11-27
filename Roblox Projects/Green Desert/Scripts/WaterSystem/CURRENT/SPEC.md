@@ -1,77 +1,58 @@
-# WaterSystem — SPEC (V4, CURRENT)
+# WaterSystem — SPEC (V5, CURRENT)
 
-Roadmap Phase 1 (water tools and growth), Phase 2 (environmental restoration) and Phase 3 (exploration and progression,
-without unlockable regions). Native Luau source of every script, saved in `WaterSystem_V4/`. Each file name is its Studio path.
+Roadmap Phase 1 (water tools and growth), Phase 2 (restoration), Phase 3 (areas, without unlockable regions) and
+Phase 4 (water tools and upgrades). Native Luau source of every script in `WaterSystem_V5/`; each file name is its Studio path.
 
 ## Scripts and where they go in Studio
 | File | Studio location | Type |
 |---|---|---|
 | ReplicatedStorage.Shared.Water.Config.luau | `ReplicatedStorage.Shared.Water.Config` | ModuleScript |
-| ReplicatedStorage.Shared.Water.AreaMap.luau | `ReplicatedStorage.Shared.Water.AreaMap` | ModuleScript (new in V4) |
+| ReplicatedStorage.Shared.Water.AreaMap.luau | `ReplicatedStorage.Shared.Water.AreaMap` | ModuleScript |
+| ReplicatedStorage.Shared.Water.ToolStats.luau | `ReplicatedStorage.Shared.Water.ToolStats` | ModuleScript (new in V5) |
 | ServerScriptService.Water.Run.luau | `ServerScriptService.Water.Run` | Script |
-| ServerScriptService.Water.Growth.luau | `ServerScriptService.Water.Growth` | ModuleScript (unchanged from V3) |
+| ServerScriptService.Water.Growth.luau | `ServerScriptService.Water.Growth` | ModuleScript |
 | ServerScriptService.Water.Restore.luau | `ServerScriptService.Water.Restore` | ModuleScript |
-| ServerScriptService.Water.Areas.luau | `ServerScriptService.Water.Areas` | ModuleScript (new in V4) |
-| ServerScriptService.Water.Springs.luau | `ServerScriptService.Water.Springs` | ModuleScript (new in V4) |
+| ServerScriptService.Water.Areas.luau | `ServerScriptService.Water.Areas` | ModuleScript |
+| ServerScriptService.Water.Springs.luau | `ServerScriptService.Water.Springs` | ModuleScript |
 | ServerScriptService.Water.Tools.luau | `ServerScriptService.Water.Tools` | ModuleScript |
+| ServerScriptService.Water.ToolModels.luau | `ServerScriptService.Water.ToolModels` | ModuleScript (new in V5) |
 | ServerScriptService.Water.Use.luau | `ServerScriptService.Water.Use` | ModuleScript |
+| ServerScriptService.Water.Shop.luau | `ServerScriptService.Water.Shop` | ModuleScript (new in V5) |
 | ServerScriptService.Water.Sources.luau | `ServerScriptService.Water.Sources` | ModuleScript |
-| ServerScriptService.Water.Tagging.luau | `ServerScriptService.Water.Tagging` | ModuleScript (unchanged from V3) |
+| ServerScriptService.Water.Tagging.luau | `ServerScriptService.Water.Tagging` | ModuleScript |
 | StarterPlayer.StarterPlayerScripts.Features.WaterClient.luau | `StarterPlayer.StarterPlayerScripts.Features.WaterClient` | LocalScript |
-| StarterPlayer.StarterPlayerScripts.Features.RestorationLook.luau | `StarterPlayer.StarterPlayerScripts.Features.RestorationLook` | LocalScript (unchanged from V3) |
+| StarterPlayer.StarterPlayerScripts.Features.RestorationLook.luau | `StarterPlayer.StarterPlayerScripts.Features.RestorationLook` | LocalScript |
 
-`ServerScriptService.Water` is a Folder. Run creates `ReplicatedStorage.WaterEvents` (remotes `Use`, `Feedback`, `Effect`) and, through Restore, the runtime folder `Workspace.Restored` (Decor, Plants).
+`ServerScriptService.Water` is a Folder. Run creates `ReplicatedStorage.WaterEvents` (remotes `Use`, `Feedback`, `Effect`, `Shop`), the tool templates `ReplicatedStorage.WaterToolModels`, and through Restore the runtime folder `Workspace.Restored`.
 
-## How it works
-- **Server-authoritative.** The client sends only a tool and an aim point; the server checks the tool, water, cooldown and range, spends the water, waters the area, restores ground, and fires an effect to clients.
-- **Tags (CollectionService):** `WaterSource` (refill spots, and hidden springs) and `Waterable` (things that grow; attributes `GrowthKind` = Grass / Plant / Tree, `WaterNeeded`, `StartStage`, `LushColor`). `Tagging` tags models under `Workspace.Map` by name: `DryShrubN` -> Plant, `PalmN` -> Tree.
-- **Tools:** WaterBottle (drop; the Items-kit HalfWaterBottle, used in game and at the start) and WateringCan (spray; defined, given to nobody yet). Tool attributes `WaterTool`, `Capacity`, `Water`. Players start with the bottle only; it keeps its water through death.
-- **Water HUD:** the player's `Water` and `WaterCapacity` attributes follow the water tool in hand (0/0 with none); the bottom-left card of the main HUD reads them (WaterHudCard_V1).
-- **Refill:** a "Refill" prompt on each `WaterSource` (the pond, PondWaterSource_V1, and each hidden spring once found).
+## Water tools (Phase 4, new in V5; every number TBD, tune in Config)
+| Tool | Pattern (`mode`) | Capacity | Water per use | Restore radius | Cooldown | Price |
+|---|---|---|---|---|---|---|
+| Water Bottle (start, Items-kit HalfWaterBottle) | drop: puddle 3 studs ahead | 6 | 1 | 1.5 | 0.6 | — |
+| Watering Can | fan: 3 patches 7 studs ahead, 28° apart | 15 | 1 | 1.6 each | 0.5 | 60 |
+| Water Bucket | drop: big splash 5 studs ahead | 24 | 4 | 4 | 1.4 | 180 |
+| Water Sprayer | spray: where you aim, up to 26 studs | 40 | 1 | 2.2 | 0.25 | 450 |
+| Large Water Tank | spray: up to 20 studs | 150 | 2 | 3 | 0.45 | 1,100 |
+| High-Pressure Blaster | jet: a line toward the aim, up to 50 studs, a patch every 3 | 60 | 2 | 1.6 each | 0.35 | 2,600 |
+| Wide-Area Sprinkler | sprinkler: set down 4 studs ahead; 6 pulses 1.5 s apart, widening to 12 studs; one at a time | 30 | 15 | up to 12 | 10 | 6,000 |
 
-### Restoration (Phase 2)
-- **One zone = the whole map** (`Config.Restore.Zones`: Green Desert, X -720..700, Z -780..640). The zone is split into 4x4 stud cells (the terrain voxel size). Cells over water or ground that is already grass are not counted (121,814 counted cells).
-- **Instant restoration, no stages for grass.** Water that lands on bare ground turns every cell the circle touches green at once. Radius per tool is `restore` in `Config.Tools` (bottle 1.5, can 14: TBD).
-- **Variety:** 3 grass types, flowers, ferns, lavender, sunflowers (new in V4), 2 bushes, 3 trees, plus the existing palms. Simple-part placeholder shapes.
-- **Growth:** bushes and trees sprout as dry saplings and grow in stages when watered; trees also grow with time alone (`Growth.TreeGrowSeconds` 180 s, TBD).
-- **Tracking:** Workspace attributes `DesertGreen` (0 to 1, the top bar), `RestorationPercent`, `RestoredCells`, `LandCells`, `Zone_<id>`.
-- **Effects:** splash ring, green ring and sparkles, milestone notices at 1/5/10/25/50/75/100 percent, `RestorationLook` colour shift.
-- **No decoration inside objects (new in V4):** cells under the parts of `Workspace.Map.Areas` (landmarks, cairns, springs) turn green and count, but grow nothing, so nothing grows through a rock or out of a spring's water.
-- **Limits:** newest 2,500 restored cells keep their decoration; at most 300 bushes and 150 trees.
+- **Models:** stud-style part models built by `ToolModels` (templates face -Z, up +Y, handle at the origin; grip measured: identity). A placed sprinkler is the template at twice the size, set on the ground, its arm turning each pulse.
+- **Coins:** restoring ground pays `Config.Economy.CoinsPerCell` (1) coin per 4x4 cell to the player who restored it (player attribute `Coins`, shown by the HUD's coin counter).
+- **Shop** (server module; HUD panel in WaterToolsPanels_V1): `WaterEvents.Shop` ("buy" / "equip" / "upgrade"). Bought tools: player attribute `Owns_<toolId>`, kept through death with their water. Rate limit 0.2 s; every request checked.
+- **Upgrades:** per tool, `Capacity` (+25% per level), `Power` (+15% patch radius), `Speed` (-8% cooldown, at most to 50%), levels 0-5 (`Up_<toolId>_<stat>`). Cost = (price or 40) x 0.4 x 1.6^level, at least 15. `ToolStats` computes every value for the server and the screen alike.
+- **Effects:** jet shots draw a droplet stream and an end ring; sprinkler pulses throw drops out to the circle with rings; notices for bought, upgraded, not enough coins, top level, sprinkler still running.
+- Replaced: the old `ServerScriptService.WateringUpgrade` (one unused watering-can level), removed; its source is kept in WaterToolsPanels_V1.
 
-### Areas, goals, rewards, springs and statistics (Phase 3, new in V4)
-- **Named explorable areas** (`Config.Areas.List`, circles inside the one zone; `AreaMap.at(x, z)` gives the area of a spot, first match wins, everything else is the fallback "Open Desert"):
-
-| Area | Centre (X, Z) | Radius | Goal | Ground | What grows |
-|---|---|---|---|---|---|
-| Pond Basin (spawn) | 0, -30 | 130 | 4% | Grass | all 3 grasses, mixed flowers, Oak and Birch |
-| Lavender Dunes | -400, -300 | 170 | 2% | Grass | Wild/Meadow grass, lots of lavender, purple and white flowers, rare Oak |
-| Birch Hollow | 350, -350 | 170 | 2% | LeafyGrass | Tall grass, ferns, Birch, BerryBush, white and pink flowers |
-| Pine Ridge | -350, 350 | 170 | 2% | Ground | Tall grass, ferns, Pine, few flowers |
-| Sunflower Meadow | 380, 300 | 170 | 2% | Grass | Meadow grass, sunflowers, yellow/orange/white flowers, rare Oak |
-
-- **Unique environments:** each area's `style` sets its ground material, grass, flowers, trees, bushes and decoration; each area also has a landmark (AreaLandmarks_V1).
-- **Restoration goals:** an area is complete when `goal` percent of its bare ground is restored. Workspace attributes `Area_<id>` (0 to 100) and `AreaDone_<id>`.
-- **Completion rewards:** completing an area is server-wide: every water tool holds `reward.capacity` (+2) more for good (Workspace `AreaCapacityBonus`, applied by Tools to current tools, new tools and tools after respawn), every player present gets +1 `StatAreas`, and everyone sees "<Area> restored! Reward: +2 water capacity".
-- **Hidden springs:** one per area, a `WaterSource` model with `Hidden = true` (AreaLandmarks_V1). Invisible and unusable until a player walks within 14 studs (`Config.Springs`); then it fades in, its rim becomes solid, its refill prompt switches on, and the finder gets a notice and +1 `StatSprings`. Workspace `Spring_<id>` tells the journal.
-- **Player statistics** (player attributes, `Config.Stats`): `StatCells` (ground restored), `StatPours`, `StatWater`, `StatPlants` (bushes and trees started), `StatSprings`, `StatAreas`. Shown in the journal (AreaHud_V1).
-- **Notices:** area complete and spring found stay 4 s; long notices wrap onto two lines (380 px wide) so they never cover the side panels.
-
-## Balance (all TBD placeholders, tune in Config only)
-| Tool | Mode | Capacity | Cost | Amount | Growth radius | Restore radius | Cooldown |
-|---|---|---|---|---|---|---|---|
-| WaterBottle | drop | 6 (starts 3), +2 per completed area | 1 | 2 | 3 | 1.5 | 0.6 |
-| WateringCan (not given) | spray, range 18 | 20 | 1 | 1 | 5 | 14 | 0.3 |
-
-Measured in playtests: a bottle pour restores 0.7 to 1.3 new cells. Pond Basin 4% = about 77 cells (60 to 110 pours); an outer area 2% = about 114 cells (90 to 160 pours).
+## Earlier systems (unchanged in V5 unless noted)
+- **Restoration (Phase 2):** the whole map is one zone of 4x4 cells (121,814 counted); water turns bare ground green at once with grass, flowers and decoration; bushes and trees grow from saplings; trees also grow with time; `DesertGreen` drives the top bar; milestone notices; RestorationLook colour shift.
+- **Areas (Phase 3):** five named areas with their own styles, goals (Pond Basin 4%, others 2%), +2 capacity rewards, hidden springs, player statistics; see AreaHud_V1 and AreaLandmarks_V1.
+- **Refill:** "Refill" prompt on each `WaterSource` (the pond and found springs).
 
 ## Dependencies
-- AreaHud_V1 (the screen side of Phase 3), AreaLandmarks_V1 (landmarks, hidden springs, cairns).
-- ItemsConfig_V1 (`Start = { HalfWaterBottle = 1 }`) and the Items kit; PondWaterSource_V1; WaterHudCard_V1; FirstPerson_V1.
-- Existing, untouched: `WateringUpgrade`, the `DesertGreen` bootstrap script, PlaceTemplates, the custom Hotbar.
+- WaterToolsPanels_V1 (Shop and Upgrades panels in GameUI), AreaHud_V1, AreaLandmarks_V1, MapPolish_V1, PondWaterSource_V1, ItemsConfig_V1, WaterHudCard_V1, FirstPerson_V1.
 
 ## Known limits (not verified / not done)
-- Unlockable regions (roadmap Phase 3) are not built, by the owner's decision.
-- A real second player joining after an area completes was not tested (Studio ran one client); respawn after completion, which uses the same code path, passed.
-- Nothing persists between sessions (Phase 8): areas, rewards, springs and stats reset when the server restarts.
+- The jet and sprinkler effects were not watched in motion; tools other than the can were viewed as models, not in the hand.
+- Balance: at these numbers the bucket restores fewer cells per water than the other tools.
+- Panels not checked on a phone. Nothing persists between sessions (Phase 8).
 - Fidelity: native script source, byte-for-byte match with Studio at save time. The place file itself is not part of this save.
