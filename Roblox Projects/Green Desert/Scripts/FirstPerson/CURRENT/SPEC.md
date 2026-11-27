@@ -1,10 +1,13 @@
-# FirstPerson — SPEC (V1, CURRENT)
+# FirstPerson — SPEC (V2, CURRENT)
 
-**What it is:** the camera script `StarterPlayer.StarterPlayerScripts.Features.FirstPerson` (LocalScript). File: `FirstPerson_V1.luau` (exact Studio source, 2924 bytes).
+**What it is:** the camera script `StarterPlayer.StarterPlayerScripts.Features.FirstPerson` (LocalScript). File: `FirstPerson_V2.luau` (exact Studio source, 3193 bytes).
 
 - First person by default: camera locked to the eyes, own body hidden (tools stay visible), white dot crosshair.
-- **Press C** to switch to third person (camera 10 to 24 studs behind, body visible, crosshair hidden); press C again to return. The choice survives death and respawn. Ignored while typing in a text box.
-- Third person uses the standard Classic camera; the water tools aim with the mouse position, so they work in both views.
-- The right-side HUD button labelled "Collection  C" is a click-only "coming soon" stub, so the key does not clash today.
+- Third person: camera 10 to 24 studs behind, body visible, crosshair hidden. Survives death and respawn.
+- **The mode is the LocalPlayer attribute `ThirdPerson`.** C toggles it (ignored while typing); the Settings panel's Camera switch and the touch-only Camera button (GameUI_V1) set it too; this script applies whatever it says.
 
-**Note:** this script existed before the approval workflow; the pre-C-key version was never saved, so V1 is the first approved version (it includes the C toggle).
+## Changes from V1
+- C no longer flips a local flag; it sets the `ThirdPerson` attribute, and a listener applies the mode, so Settings and the touch button share one source of truth.
+
+## Notes
+- While a panel or the title screen is open, GameUI_V1 frees the mouse each frame (after the camera), so first person never locks the cursor over a panel.

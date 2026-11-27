@@ -140,29 +140,29 @@ Phase 6 – Player Experience \& Interface
 
 USER INTERFACE
 
-\- \[ ] Main menu.
+\- \[x] Main menu.
 
-\- \[ ] Water capacity display.
+\- \[x] Water capacity display.
 
-\- \[ ] Water refill indicator.
+\- \[x] Water refill indicator.
 
-\- \[ ] Tool inventory GUI.
+\- \[x] Tool inventory GUI.
 
-\- \[ ] Restoration progress GUI.
+\- \[x] Restoration progress GUI.
 
-\- \[ ] World map.
+\- \[x] World map.
 
-\- \[ ] Area completion notifications.
+\- \[x] Area completion notifications.
 
-\- \[ ] Tool shop.
+\- \[x] Tool shop.
 
-\- \[ ] Robux shop.
+\- \[x] Robux shop (screen with every item marked coming soon; purchases are wired in Phase 5).
 
-\- \[ ] Settings menu.
+\- \[x] Settings menu.
 
-\- \[ ] Player statistics interface.
+\- \[x] Player statistics interface.
 
-\- \[ ] Mobile-friendly controls.
+\- \[x] Mobile-friendly controls.
 
 Phase 7 – World Atmosphere \& Polish
 

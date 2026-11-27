@@ -1,22 +1,15 @@
-# AreaHud — SPEC (V1, CURRENT)
+# AreaHud — SPEC (V2, CURRENT)
 
-The screen side of roadmap Phase 3. One LocalScript, `AreaHud_V1.luau`.
+**What it is:** the LocalScript `StarterPlayer.StarterPlayerScripts.Features.AreaHud`. File: `AreaHud_V2.luau` (exact Studio source, 7392 bytes).
 
-| File | Studio location | Type |
-|---|---|---|
-| AreaHud_V1.luau | `StarterPlayer.StarterPlayerScripts.Features.AreaHud` | LocalScript |
+- **Area card** (bottom left, just above the water card): the area the player stands in, its restoration bar and goal ("0.4% of 2%"), and a "[J] Stats" / "Tap: Stats" hint.
+- **Entry banner:** walking into an area shows its name, unless the Settings switch `ShowAreaNames` (LocalPlayer attribute) is off.
+- **J key or a click/tap on the card** opens the main HUD's Statistics panel by firing `PlayerGui.UIEvents.Open` with "Stats" (GameUI_V1 owns the panel).
+- Reads only server attributes (`Area_<id>`, `AreaDone_<id>`); decides nothing.
 
-## What it shows
-- **Area card** (bottom-left): the area the player stands in, a bar toward that area's goal, "x% of y%" or "Complete!", and "[J] Journal" ("Tap: Journal" on touch-only devices). It sits 8 px above the main HUD's water card (GameHUD.Root.WaterCard) at the same width, at any screen size; with no water card it falls back to its own spot. The ScreenGui ignores the GUI inset like GameHUD.
-- **Entry banner:** the area's name and its goal, faded in for 3 s whenever the player enters another area.
-- **Restoration Journal** (J key, or click/tap the card; X closes): the player's statistics (Config.Stats), every area's progress or "Complete", which way each area lies from where the camera faces and how far ("ahead left, 340 studs"; "you are here" inside it), each hidden spring "found" / "not found yet", the Open Desert, and the whole map's percentage. Refreshes 4 times a second while open.
-
-## Reads (nothing here decides anything)
-Player attributes `Stat*`; Workspace attributes `Area_<id>`, `AreaDone_<id>`, `Spring_<id>`, `RestorationPercent`; `ReplicatedStorage.Shared.Water.Config` (Areas, Stats) and `AreaMap`.
+## Changes from V1
+- The Restoration Journal is removed; its contents (statistics, area progress and directions, hidden springs, whole map) moved into GameUI_V1's Statistics panel in the HUD style.
+- Banners respect `ShowAreaNames`.
 
 ## Dependencies
-WaterSystem_V4 (Config, AreaMap and the attributes above), the generated main HUD (GameHUD with WaterCard).
-
-## Known limits
-- Layout checked at 852x650 and 1920-wide Studio windows; not checked on an actual phone.
-- Fidelity: native script source, byte-for-byte match with Studio at save time.
+- GameUI_V1 (Statistics panel, `UIEvents.Open`), WaterSystem_V6 (Config.Areas, AreaMap, area attributes).

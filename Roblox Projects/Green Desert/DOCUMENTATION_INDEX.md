@@ -13,10 +13,10 @@ This index is the starting point for Claude and other development tools navigati
 | File | Purpose | Current status |
 |---|---|---|
 | [Project Context.md](Doc/Project%20Context.md) | Game name, genre, target audience, platforms, art style, currency, and core gameplay | Populated |
-| [RoadMap.md](Doc/RoadMap.md) | Planned work across core gameplay, restoration, progression, tools, monetization, UI, polish, saving/multiplayer, and release | Populated; checklist items remain unchecked in source |
+| [RoadMap.md](Doc/RoadMap.md) | Planned work across core gameplay, restoration, progression, tools, monetization, UI, polish, saving/multiplayer, and release | Populated; ticked items are built and approved (Phase 6 complete as of 2026-11-27) |
 | [UI Ideas.md](Doc/UI%20Ideas.md) | Interface layout and usability guidance | Populated |
 | [GameUpdates.md](Doc/GameUpdates.md) | The owner's list of things to fix or add | Populated (owner's list; change notes are in each asset's VERSION_HISTORY.md) |
-| [VERSION_INDEX.md](../../VERSION_INDEX.md) | Approved asset versions saved in this repo (WaterSystem, PondWaterSource, ItemsConfig, FirstPerson, WaterHudCard, AreaHud, AreaLandmarks, MapPolish, WaterToolsPanels) | Populated |
+| [VERSION_INDEX.md](../../VERSION_INDEX.md) | Approved asset versions saved in this repo (WaterSystem, PondWaterSource, ItemsConfig, FirstPerson, WaterHudCard, AreaHud, AreaLandmarks, MapPolish, WaterToolsPanels, GameUI, RefillIndicator) | Populated |
 | [ROBLOX_VERSIONING.md](../../ROBLOX_VERSIONING.md) | How approved versions are saved (CURRENT / ARCHIVE layout) | Populated |
 
 ## Reference images

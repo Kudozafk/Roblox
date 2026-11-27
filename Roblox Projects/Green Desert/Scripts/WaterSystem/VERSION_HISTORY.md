@@ -1,6 +1,12 @@
 # WaterSystem — Version History
 
-## WaterSystem_V5 — 2026-11-27 (CURRENT)
+## WaterSystem_V6 — 2026-11-27 (CURRENT)
+- Phase 6 (water side): every tool aims at the cursor within its own range (`ToolStats.clampAim`, shared by server and screen); an aim ring shows where the water lands (visible above tall grass); "+N" coin pops where the player's own water restored ground (Effect now sends the pourer's UserId); Reduced effects setting; notices moved to GameUI.
+- Changed: Config (ranges), ToolStats (clampAim), Use (aim-clamped targets for every pattern, terrain drop), WaterClient (aim ring, touch aim, coin pops, reduced effects, notice box removed). Unchanged: the other 12 scripts.
+- Approved: "approved". Playtests: ring at the clamped 10 studs for the can, on grass and on sand; real held clicks used water; pours on sand paid coins (440 -> 444, 444 -> 461) with 8 coin pops seen; empty tool showed the warning and refill marker; console clean. All 16 scripts match Studio byte for byte.
+- Previous version preserved in `ARCHIVE/WaterSystem_V5/`.
+
+## WaterSystem_V5 — 2026-11-27 (archived)
 - Phase 4: six new water tools bought with coins (Watering Can, Water Bucket brought back, Water Sprayer, Large Water Tank, High-Pressure Blaster, Wide-Area Sprinkler), stud-style part models, five spray patterns (drop, fan, spray, jet, sprinkler), different capacities.
 - Coins: 1 per restored cell. Shop (buy / equip) and per-tool upgrades (Capacity, Power, Speed, levels 0-5); bought tools and upgrades kept through death.
 - New scripts: ToolStats, ToolModels, Shop. Changed: Config, Run, Tools, Use, Restore, WaterClient. Unchanged: AreaMap, Growth, Areas, Springs, Sources, Tagging, RestorationLook. Removed: the old WateringUpgrade script.
