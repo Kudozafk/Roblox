@@ -15,7 +15,9 @@ This index is the starting point for Claude and other development tools navigati
 | [Project Context.md](Doc/Project%20Context.md) | Game name, genre, target audience, platforms, art style, currency, and core gameplay | Populated |
 | [RoadMap.md](Doc/RoadMap.md) | Planned work across core gameplay, restoration, progression, tools, monetization, UI, polish, saving/multiplayer, and release | Populated; checklist items remain unchecked in source |
 | [UI Ideas.md](Doc/UI%20Ideas.md) | Interface layout and usability guidance | Populated |
-| [GameUpdates.md](Doc/GameUpdates.md) | Game update/change notes | Empty placeholder |
+| [GameUpdates.md](Doc/GameUpdates.md) | Game update/change notes | Populated (Phase 1 water system entry) |
+| [VERSION_INDEX.md](../../VERSION_INDEX.md) | Approved asset versions saved in this repo (WaterSystem, PondWaterSource, ItemsConfig) | Populated |
+| [ROBLOX_VERSIONING.md](../../ROBLOX_VERSIONING.md) | How approved versions are saved (CURRENT / ARCHIVE layout) | Populated |
 
 ## Reference images
 
@@ -40,7 +42,6 @@ When creating or modifying an asset/interface, inspect the relevant reference im
 
 ## Known documentation gaps
 
-- `GameUpdates.md` is currently empty.
 - No separate detailed monetization specification was found in the current `Doc` folder; monetization ideas are listed in the roadmap.
 - No standalone detailed map/world-design specification was found in the current `Doc` folder.
 - No standalone technical architecture, data-saving specification, or model specification document was found in the current `Doc` folder.
