@@ -4,27 +4,27 @@ FOUNDATION
 
 \- \[ ] Build the barren starting world.
 
-\- \[ ] Create interactive water sources.
+\- \[x] Create interactive water sources.
 
-\- \[ ] Implement water collection and refilling.
+\- \[x] Implement water collection and refilling.
 
-\- \[ ] Create different water tools.
+\- \[x] Create different water tools.
 
-\- \[ ] Add water capacity for each tool.
+\- \[x] Add water capacity for each tool.
 
-\- \[ ] Implement spraying and dropping water.
+\- \[x] Implement spraying and dropping water.
 
-\- \[ ] Make water interact with the environment.
+\- \[x] Make water interact with the environment.
 
-\- \[ ] Make grass grow when watered.
+\- \[x] Make grass grow when watered.
 
-\- \[ ] Make plants grow when watered.
+\- \[x] Make plants grow when watered.
 
-\- \[ ] Make trees grow when watered.
+\- \[x] Make trees grow when watered.
 
-\- \[ ] Add water consumption mechanics.
+\- \[x] Add water consumption mechanics.
 
-\- \[ ] Add tool equipping and switching.
+\- \[x] Add tool equipping and switching.
 
 Phase 2 – Environmental Restoration
 
