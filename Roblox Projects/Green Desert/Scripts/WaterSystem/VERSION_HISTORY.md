@@ -1,6 +1,15 @@
 # WaterSystem — Version History
 
-## WaterSystem_V2 — 2026-11-26 (CURRENT)
+## WaterSystem_V3 — 2026-11-26 (CURRENT)
+- Phase 2: the whole map is one restoration zone; water turns bare ground green at once (grass terrain, 3 grass types, flowers, ferns, lavender, bushes, trees), with no growth stages for grass. Bushes and trees sprout as saplings and grow in stages when watered.
+- Trees (and the existing palms) now grow over time with no water needed (180 s, TBD).
+- Restoration percentage tracking (`DesertGreen`, `RestorationPercent`, per-zone), milestone notices, splash/sparkle effects, RestorationLook colour shift.
+- Water HUD (bottom-left card) follows the water tool in hand; the extra bar above the hotbar was removed.
+- Bottle restore radius 1.5 studs (15% of the first draft's 10).
+- Approved: "approved". Playtests: spawn with the bottle only, pours restored 2 to 4 cells each, 72-pour run reached the 1% milestone, oak sapling grew stage 0 to 4 with water, palms grew with time alone, bottle survives death, console clean. All 10 scripts match Studio byte for byte.
+- Previous version preserved in `ARCHIVE/WaterSystem_V2/`.
+
+## WaterSystem_V2 — 2026-11-26 (archived)
 - Removed the Water Bucket completely (Config entry and its model builder in Tools).
 - The half water bottle is the model and item used in game and at the start; `Config.StartTools` is now empty, so the Watering Can is no longer given at the start (still defined, unused).
 - Approved: "approve". Playtest: spawn with only the HalfWaterBottle (3/6), survives death, a pour spends water, no console errors. Config and Tools match Studio byte for byte.

@@ -32,23 +32,23 @@ WORLD TRANSFORMATION
 
 \- \[ ] Create multiple restoration zones.
 
-\- \[ ] Add different types of grass.
+\- \[x] Add different types of grass.
 
-\- \[ ] Add flowers and vegetation.
+\- \[x] Add flowers and vegetation.
 
-\- \[ ] Add different tree varieties.
+\- \[x] Add different tree varieties.
 
-\- \[ ] Add bushes and decorative plants.
+\- \[x] Add bushes and decorative plants.
 
-\- \[ ] Create different growth stages.
+\- \[x] Create different growth stages.
 
-\- \[ ] Add visual effects when watering.
+\- \[x] Add visual effects when watering.
 
-\- \[ ] Add environmental transformation effects.
+\- \[x] Add environmental transformation effects.
 
-\- \[ ] Make restored areas visually different from barren areas.
+\- \[x] Make restored areas visually different from barren areas.
 
-\- \[ ] Add restoration percentage tracking.
+\- \[x] Add restoration percentage tracking.
 
 Phase 3 – Exploration \& Progression
 

@@ -1,0 +1,16 @@
+--- GameUI (before)
++++ GameUI (WaterHudCard_V1)
+@@ StarterPlayer.StarterPlayerScripts.UI.GameUI, function refreshWater (lines 708-716) @@
+ local function refreshWater()
+-	local cap = math.max(1, tonumber(player:GetAttribute("WaterCapacity")) or 1000)
+-	local held = math.clamp(tonumber(player:GetAttribute("Water")) or 0, 0, cap)
+-	waterFill.Size = UDim2.fromScale(held / cap, 1)
+-	waterCount.Text = `{held} / {cap}`
++	-- The player's Water and WaterCapacity follow the water tool in hand (set by the server); no tool, no card.
++	local capacity = tonumber(player:GetAttribute("WaterCapacity")) or 0
++	waterCard.Visible = capacity > 0
++	local cap = math.max(1, capacity)
++	local held = math.clamp(tonumber(player:GetAttribute("Water")) or 0, 0, cap)
++	waterFill.Size = UDim2.fromScale(held / cap, 1)
++	waterCount.Text = `{math.floor(held + 0.5)} / {cap}`
+ end
