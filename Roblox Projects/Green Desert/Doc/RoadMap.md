@@ -54,19 +54,19 @@ Phase 3 – Exploration \& Progression
 
 PLAYER MOTIVATION
 
-\- \[ ] Create multiple explorable areas.
+\- \[x] Create multiple explorable areas.
 
-\- \[ ] Add hidden water sources.
+\- \[x] Add hidden water sources.
 
-\- \[ ] Add unique environments and landscapes.
+\- \[x] Add unique environments and landscapes.
 
-\- \[ ] Create area restoration goals.
+\- \[x] Create area restoration goals.
 
-\- \[ ] Add area completion rewards.
+\- \[x] Add area completion rewards.
 
 \- \[ ] Add unlockable regions.
 
-\- \[ ] Add player restoration statistics.
+\- \[x] Add player restoration statistics.
 
 \- \[ ] Add total water used tracking.
 

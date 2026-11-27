@@ -1,6 +1,16 @@
 # WaterSystem — Version History
 
-## WaterSystem_V3 — 2026-11-26 (CURRENT)
+## WaterSystem_V4 — 2026-11-27 (CURRENT)
+- Phase 3 (without unlockable regions): five named explorable areas (Pond Basin, Lavender Dunes, Birch Hollow, Pine Ridge, Sunflower Meadow) plus the Open Desert, each restoring in its own style (ground material, grass, flowers, trees, decoration; sunflowers are new).
+- Area restoration goals (Pond Basin 4%, others 2%, TBD) and completion rewards (+2 water capacity on every water tool for good, server-wide, kept through respawn).
+- Hidden springs: one per area, found by walking within 14 studs; then they show, become solid and work as refill points.
+- Player restoration statistics (cells restored, pours, water used, plants started, springs found, areas completed).
+- Nothing grows inside landmarks, cairns or springs; long notices wrap instead of covering side panels.
+- New scripts: AreaMap, Areas, Springs. Changed: Config, Run, Restore, Tools, Use, Sources, WaterClient. Unchanged: Growth, Tagging, RestorationLook.
+- Approved: "approve" (after an Opus review-and-fix pass). Playtests: spring discovery and reveal; Lavender Dunes and Pond Basin completed with real pours (137 and 107), reward 6 -> 8 capacity, kept after death; Birch Hollow, Sunflower Meadow, Pine Ridge and Lavender Dunes each restored in their own style; zero restored parts inside any landmark; console clean. All 13 scripts match Studio byte for byte.
+- Previous version preserved in `ARCHIVE/WaterSystem_V3/`.
+
+## WaterSystem_V3 — 2026-11-26 (archived)
 - Phase 2: the whole map is one restoration zone; water turns bare ground green at once (grass terrain, 3 grass types, flowers, ferns, lavender, bushes, trees), with no growth stages for grass. Bushes and trees sprout as saplings and grow in stages when watered.
 - Trees (and the existing palms) now grow over time with no water needed (180 s, TBD).
 - Restoration percentage tracking (`DesertGreen`, `RestorationPercent`, per-zone), milestone notices, splash/sparkle effects, RestorationLook colour shift.
