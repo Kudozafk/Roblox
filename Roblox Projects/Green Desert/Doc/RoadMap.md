@@ -194,25 +194,25 @@ Phase 8 – Saving \& Multiplayer
 
 LIVE GAME SYSTEMS
 
-\- \[ ] Save player progress.
+\- \[x] Save player progress.
 
-\- \[ ] Save unlocked areas.
+\- \[x] Save unlocked areas.
 
-\- \[ ] Save purchased tools.
+\- \[x] Save purchased tools.
 
-\- \[ ] Save restoration statistics.
+\- \[x] Save restoration statistics.
 
-\- \[ ] Save equipped tools.
+\- \[x] Save equipped tools.
 
-\- \[ ] Multiplayer world exploration.
+\- \[x] Multiplayer world exploration.
 
-\- \[ ] Shared environmental restoration.
+\- \[x] Shared environmental restoration.
 
-\- \[ ] Player restoration leaderboards.
+\- \[x] Player restoration leaderboards.
 
-\- \[ ] Global restoration statistics.
+\- \[x] Global restoration statistics.
 
-\- \[ ] DataStore error handling.
+\- \[x] DataStore error handling.
 
 Phase 9 – Testing \& Release
 

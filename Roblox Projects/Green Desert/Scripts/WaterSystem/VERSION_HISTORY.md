@@ -1,6 +1,12 @@
 # WaterSystem — Version History
 
-## WaterSystem_V7 — 2026-11-27 (CURRENT)
+## WaterSystem_V8 — 2026-11-27 (CURRENT)
+- Phase 8 (saving and multiplayer): each player's coins, tools, upgrades, tool water and tool in hand, statistics, completed areas (with their reward), found springs and their own restored world are saved and come back on any server; retries, session lock, autosave, shutdown save, versioned data, no overwrite of a save that failed to load; "TOP RESTORERS" board by the spawn; all-time total of restored cells.
+- Changed: ToolStats, Areas, Restore, Run, Springs, Tools. New: PlayerData, Leaderboard. Unchanged: the other 12 scripts.
+- Approved: "approved". Playtests with the in-memory store (Studio API access off): save, wipe and reload restored 11,480 coins, 4 tools, 2 upgrade levels, 121 cells, 22 pours, 2 springs, the bucket in hand at 12/30; Pond Basin completed with 16 blaster shots and its +2 capacity came back on every tool; board showed "1. Kudoz 121", global total 121; console clean. Real DataStores not tested. All 20 scripts match Studio byte for byte.
+- Previous version preserved in `ARCHIVE/WaterSystem_V7/`.
+
+## WaterSystem_V7 — 2026-11-27 (archived)
 - Phase 7 (tools and growth): every tool has its own sound, water stream, splash and use animation; new patterns for the bucket (splash), sprayer (mist) and tank (wide); balance retuned so area per second rises with price; the green ripples outward from where water lands; grass, flowers and saplings pop up; plants sparkle on a stage; a soft chime on the player's own restoring.
 - Changed: Config, Use, Restore, WaterClient. New: ToolEffects, GrowthJuice. Unchanged: the other 12 scripts.
 - Approved: "approve". Playtests: all 7 tools fired on fresh sand: water spent matched (1, 1, 3, 1, 1, 2, 12), every one earned coins, droplets in flight (10 to 28); pouring tools tip forward (measured); 12 of 12 fresh cells grew from small to full, appearing 0.16 to 0.21 s after the shot; no part left shrunk; no measurable frame cost; console clean. All 18 scripts match Studio byte for byte.

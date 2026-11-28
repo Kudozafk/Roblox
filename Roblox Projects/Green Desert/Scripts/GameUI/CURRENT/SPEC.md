@@ -1,10 +1,13 @@
-# GameUI — SPEC (V2, CURRENT)
+# GameUI — SPEC (V3, CURRENT)
 
-**What it is:** the main HUD LocalScript `StarterPlayer.StarterPlayerScripts.UI.GameUI`. File: `GameUI_V2.luau` (exact Studio source of the whole script, 99,468 bytes). Roadmap Phase 6 (player experience and interface).
+**What it is:** the main HUD LocalScript `StarterPlayer.StarterPlayerScripts.UI.GameUI`. File: `GameUI_V3.luau` (exact Studio source of the whole script, 100,155 bytes). Roadmap Phase 6 (player experience and interface).
 
 Earlier HUD work was saved as patches on this script (WaterHudCard_V1, WaterToolsPanels_V1); this is the first save of the complete script and supersedes those patches (they stay as they are, as history).
 
-## Changes from V1
+## Changes from V2
+- Phase 8: tool capacities refresh when the player's own area reward (`AreaBonus`) changes; a notice for 10 s when a save could not load ("nosave"); Statistics shows "Restored by all players, all time" and the title screen shows the all-time total (Workspace `GlobalRestored`).
+
+## Changes from V1 (in V2)
 - The shop names the new tool patterns of WaterSystem_V7 (Splash, Mist, Wide spray). Settings' sound volume also sets the Ambience group (WorldAtmosphere_V1 reads SfxVolume).
 
 ## Layout

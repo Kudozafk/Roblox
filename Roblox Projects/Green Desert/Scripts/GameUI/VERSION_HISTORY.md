@@ -1,6 +1,11 @@
 # GameUI — Version History
 
-## GameUI_V2 — 2026-11-27 (CURRENT)
+## GameUI_V3 — 2026-11-27 (CURRENT)
+- Phase 8: capacity refresh on the player's own area reward (AreaBonus); "your progress could not load" notice; all-time restored total in Statistics and on the title screen.
+- Approved: "approved" (with WaterSystem_V8). Source matches Studio byte for byte.
+- Previous version preserved in `ARCHIVE/GameUI_V2/`.
+
+## GameUI_V2 — 2026-11-27 (archived)
 - Phase 7: the Water Tools shop names the new patterns (Splash, Mist, Wide spray).
 - Approved: "approve". Source matches Studio byte for byte.
 - Previous version preserved in `ARCHIVE/GameUI_V1/`.
